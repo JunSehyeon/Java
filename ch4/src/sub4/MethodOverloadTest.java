@@ -11,7 +11,8 @@ public class MethodOverloadTest {
 		int r1 = add(3);
 		int r2 = add(2,3);
 		double r3 = add(1.1,3.14);
-		String r4 = add("Hello","Java");
+		String r4 = add("Hello","Java");		
+		String r5=  add("number_",1);
 		
 		System.out.println("r1:"+r1);
 		System.out.println("r2:"+r2);
@@ -31,6 +32,9 @@ public class MethodOverloadTest {
 		return a+b;
 	}
 	public static String add(String a, String b) {
+		return a+b;
+	}
+	public static String add(String a, int b) {
 		return a+b;
 	}
 }
