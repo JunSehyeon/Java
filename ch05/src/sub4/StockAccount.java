@@ -1,61 +1,37 @@
 package sub4;
 
-public class StockAccount {
+public class StockAccount extends Account {
 	
-	private String bank;
-	private String id;
-	private String name;
-	private int balance;
 	private String stock;
 	private int amount;
-	private int price;
+	private int price;	
 
-	public StockAccount(String bank, String id, String name, int balance, String stock, int amount) {
-		this.bank = bank;
-		this.id = id;
-		this.name = name;
-		this.balance = balance;
+	public StockAccount(String bank, String id, String name, int balance, String stock, int amount, int price) {
+		super(bank, id, name, balance);
+		
 		this.stock = stock;
 		this.amount = amount;
-	}
-	
-	public void setPrice(int price) {
 		this.price = price;
 	}
-
+	
+	public void sell(int amount, int price) {
+		this.amount -= amount;
+		this.balance += amount * price;
+	}
+	
+	public void buy(int amount, int price) {
+		this.amount += amount;
+		this.balance -= amount * price;		
+	}
+	
 	public void show() {
-		System.out.println("은행명 : " + bank);
-		System.out.println("계좌번호 : " + id);
-		System.out.println("예금주 : " + name);
-		System.out.println("잔액 : " + balance + "원");
-		System.out.println("주식명 : " + stock);
-		System.out.println("보유수량 : " + amount + "주");
-		System.out.println("현재가격 : " + price + "원");
-		System.out.println("총 평가금액 : " + (price * amount) + "원");
-	}
+		System.out.println("증권사 : " + this.bank);
+		System.out.println("계좌번호 : " + this.id);
+		System.out.println("입금주 : " + this.name);
+		System.out.println("현재잔액 : " + this.balance);
+		System.out.println("주식종목 : " + this.stock);
+		System.out.println("현재수량 : " + this.amount);
+		System.out.println("현재가격 : " + this.price);		
+	}	
 
-	// Getter / Setter (필요한 필드만 추가적으로 만들 수 있음)
-	public String getStock() {
-		return stock;
-	}
-
-	public void setStock(String stock) {
-		this.stock = stock;
-	}
-
-	public int getAmount() {
-		return amount;
-	}
-
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
-
-	public int getBalance() {
-		return balance;
-	}
-
-	public void setBalance(int balance) {
-		this.balance = balance;
-	}
 }
