@@ -17,6 +17,12 @@ public class PolyTest {
 		 Animal eagle = new Eagle();
 		 Animal shark = new Shark();
 		 
+		 Pet dog = new Dog();
+		 Pet cat = new Cat();
+		 
+		 dog.Say();
+		 cat.Say();
+		 
 		 shark.move();
 		 shark.hunt();
 		 
