@@ -1,11 +1,11 @@
 package test3;
 
 class Customer {
-	int id;
-	String name;
-	String grade;
-	int point;
-	double pointRatio;
+	private int id;
+	private String name;
+	protected String grade;
+	protected int point;
+	protected double pointRatio;
 	
 	public Customer(int id, String name) {
 		
@@ -36,13 +36,14 @@ class Customer {
 	}
 }
 
-class VipCustomer {
+class VipCustomer extends Customer{
 	private double saleRatio;
 	
 	public VipCustomer(int id, String name) {
-		.grade = "VIP";
-		.point = 1000;
-		.pointRatio = 0.05;
+		super(id,name);
+		super.grade = "VIP";
+		super.point = 1000;
+		super.pointRatio = 0.05;
 		this.saleRatio = 0.1;
 	}
 	
